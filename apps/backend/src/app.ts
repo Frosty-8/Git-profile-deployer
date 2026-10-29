@@ -5,6 +5,7 @@ import { corsMiddleware } from "./middleware/cors.js";
 import { errorHandler } from "./middleware/error-handler.js";
 import { loggerMiddleware } from "./middleware/logger.js";
 
+import profile from "./routes/profile.js";
 import health from "./routes/health.js";
 
 const app = new Hono();
@@ -16,6 +17,8 @@ app.use("*", corsMiddleware);
 app.onError(errorHandler);
 
 app.route(`${API_PREFIX}/health`, health);
+
+app.route(`${API_PREFIX}/profile`, profile);
 
 app.notFound((c) => {
   return c.json(
