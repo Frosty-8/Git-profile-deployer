@@ -1,6 +1,5 @@
 import type {
-  DesignDefinition,
-  DesignRenderContext
+  DesignDefinition
 } from "../../types/design.js";
 
 import {
@@ -17,94 +16,109 @@ import {
 } from "./sections.js";
 
 import {
-  retroCityBackground
+  retroBackground,
+  skyline,
+  retroGrid
 } from "./background.js";
 
-import { retroCityManifest } from "./manifest.js";
-import { retroCityTheme } from "./theme.js";
+import {
+  retroCityTheme
+} from "./theme.js";
 
-const composition:
-  DesignComposition = {
-    width: 1200,
-    height: 630,
+import {
+  retroCityManifest
+} from "./manifest.js";
 
-    sections: [
-      {
-        section: "hero",
-        x: 70,
-        y: 45,
-        width: 1060,
-        height: 130
-      },
+const composition: DesignComposition = {
+  width: 1200,
+  height: 900,
 
-      {
-        section: "stats",
-        x: 70,
-        y: 190,
-        width: 1060,
-        height: 100
-      },
+  sections: [
+    {
+      section: "hero",
+      x: 80,
+      y: 90,
+      width: 1040,
+      height: 170
+    },
 
-      {
-        section: "stack",
-        x: 70,
-        y: 315,
-        width: 440,
-        height: 130
-      },
+    {
+      section: "stats",
+      x: 80,
+      y: 310,
+      width: 1040,
+      height: 110
+    },
 
-      {
-        section: "projects",
-        x: 530,
-        y: 315,
-        width: 600,
-        height: 150
-      },
+    {
+      section: "stack",
+      x: 80,
+      y: 470,
+      width: 460,
+      height: 170
+    },
 
-      {
-        section: "footer",
-        x: 70,
-        y: 490,
-        width: 400,
-        height: 30
-      }
-    ]
-  };
+    {
+      section: "projects",
+      x: 580,
+      y: 470,
+      width: 540,
+      height: 230
+    }
+  ]
+};
 
 export const retroCityDesign:
   DesignDefinition = {
-    manifest: retroCityManifest,
 
-    theme: retroCityTheme,
+  manifest: retroCityManifest,
 
-    render(
-      context: DesignRenderContext
-    ): string {
-      const background =
-        retroCityBackground(
-          retroCityTheme
-        );
+  theme: retroCityTheme,
 
-      const content =
-        renderComposition(
-          composition,
-          retroSectionRegistry,
-          {
-            ...context,
-            theme: retroCityTheme,
-            width: composition.width,
-            height: composition.height
-          }
-        );
+  render(context) {
+    const background = retroBackground(
+      composition.width,
+      composition.height,
+      retroCityTheme
+    );
 
-      return svg(
-        composition.width,
-        composition.height,
-        `
-          ${background}
+    const city = skyline(
+      composition.width,
+      composition.height * 0.3,
+      retroCityTheme
+    );
 
-          ${content}
-        `
+    const grid = retroGrid(
+      composition.width,
+      composition.height,
+      retroCityTheme
+    );
+
+    const sections =
+      renderComposition(
+        composition,
+        retroSectionRegistry,
+        {
+          ...context,
+          width: composition.width,
+          height: composition.height
+        }
       );
-    }
-  };
+
+    return svg(
+      composition.width,
+      composition.height,
+      `
+        ${background}
+
+        <g transform="translate(0 630)">
+          ${city}
+        </g>
+
+        ${grid}
+
+        ${sections}
+      `
+    );
+  }
+};

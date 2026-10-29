@@ -1,184 +1,194 @@
 import {
+  circle,
   defs,
-  linearGradient,
   glowFilter,
-  rect,
-  line
+  linearGradient,
+  rect
 } from "../../sdk/svg/index.js";
 
 import type { DesignTheme } from "../../types/design.js";
 
-export function retroCityBackground(
+export function retroBackground(
+  width: number,
+  height: number,
   theme: DesignTheme
 ): string {
-  const gradient = linearGradient(
-    "retroBackground",
-    [
-      {
-        offset: "0%",
-        color: theme.colors.background
-      },
-      {
-        offset: "55%",
-        color: "#16002D"
-      },
-      {
-        offset: "100%",
-        color: "#050008"
-      }
-    ],
-    {
-      x1: "0%",
-      y1: "0%",
-      x2: "0%",
-      y2: "100%"
-    }
-  );
-
-  const glow = glowFilter(
-    "retroGlow",
-    6
-  );
-
-  const horizon = line({
-    x1: 0,
-    y1: 530,
-    x2: 1200,
-    y2: 530,
-    stroke: theme.colors.accent,
-    strokeWidth: 2,
-    opacity: 0.8
-  });
-
-  const gridLines: string[] = [];
-
-  for (let i = 0; i < 12; i++) {
-    const y = 540 + i * 8;
-
-    gridLines.push(
-      line({
-        x1: 0,
-        y1: y,
-        x2: 1200,
-        y2: y,
-        stroke: theme.colors.primary,
-        strokeWidth: 1,
-        opacity: Math.max(
-          0.05,
-          0.35 - i * 0.02
-        )
-      })
-    );
-  }
+  const gradientId = "retro-city-gradient";
+  const glowId = "retro-city-glow";
 
   return `
     ${defs(`
-      ${gradient}
-      ${glow}
+      ${linearGradient(
+        gradientId,
+        [
+          {
+            offset: "0%",
+            color: theme.colors.primary,
+            opacity: 0.18
+          },
+          {
+            offset: "50%",
+            color: theme.colors.accent,
+            opacity: 0.10
+          },
+          {
+            offset: "100%",
+            color: theme.colors.background,
+            opacity: 0
+          }
+        ]
+      )}
+
+      ${glowFilter(glowId, 12)}
     `)}
-  
+
     ${rect({
       x: 0,
       y: 0,
-      width: 1200,
-      height: 630,
-      fill: "url(#retroBackground)"
+      width,
+      height,
+      fill: theme.colors.background
     })}
-  
-    ${retroSkyline(theme)}
 
-    ${retroCityLights(theme)}
-  
-    ${horizon}
-  
-    <g filter="url(#retroGlow)">
-      ${gridLines.join("\n")}
-    </g>
+    <circle
+      cx="${width * 0.82}"
+      cy="${height * 0.18}"
+      r="${Math.min(width, height) * 0.35}"
+      fill="url(#${gradientId})"
+      filter="url(#${glowId})"
+      opacity="0.8"
+    />
+
+    <circle
+      cx="${width * 0.15}"
+      cy="${height * 0.75}"
+      r="${Math.min(width, height) * 0.28}"
+      fill="${theme.colors.primary}"
+      opacity="0.05"
+    />
   `;
 }
 
-export function retroSkyline(
+export function skyline(
+  width: number,
+  height: number,
   theme: DesignTheme
 ): string {
   const buildings = [
-    { x: 0, width: 90, height: 65 },
-    { x: 90, width: 70, height: 95 },
-    { x: 160, width: 120, height: 55 },
-    { x: 280, width: 80, height: 125 },
-    { x: 360, width: 110, height: 75 },
-    { x: 470, width: 65, height: 150 },
-    { x: 535, width: 100, height: 85 },
-    { x: 635, width: 75, height: 130 },
-    { x: 710, width: 130, height: 70 },
-    { x: 840, width: 90, height: 110 },
-    { x: 930, width: 115, height: 75 },
-    { x: 1045, width: 70, height: 140 },
-    { x: 1115, width: 85, height: 95 }
+    { x: 0.00, w: 0.08, h: 0.24 },
+    { x: 0.08, w: 0.06, h: 0.38 },
+    { x: 0.14, w: 0.10, h: 0.20 },
+    { x: 0.24, w: 0.07, h: 0.46 },
+    { x: 0.31, w: 0.11, h: 0.30 },
+    { x: 0.42, w: 0.06, h: 0.52 },
+    { x: 0.48, w: 0.09, h: 0.34 },
+    { x: 0.57, w: 0.08, h: 0.43 },
+    { x: 0.65, w: 0.11, h: 0.25 },
+    { x: 0.76, w: 0.07, h: 0.48 },
+    { x: 0.83, w: 0.09, h: 0.31 },
+    { x: 0.92, w: 0.08, h: 0.40 }
   ];
 
+  const baseY = height;
+
   return buildings
-    .map((building) => {
-      const y = 530 - building.height;
+    .map((building, index) => {
+      const x = width * building.x;
+      const buildingWidth = width * building.w;
+      const buildingHeight = height * building.h;
+      const y = baseY - buildingHeight;
+
+      const windows = Array.from(
+        { length: 4 },
+        (_, row) =>
+          Array.from(
+            { length: 3 },
+            (_, column) => `
+              <rect
+                x="${x + 8 + column * 18}"
+                y="${y + 14 + row * 20}"
+                width="5"
+                height="7"
+                rx="1"
+                fill="${theme.colors.accent}"
+                opacity="${0.15 + ((index + row + column) % 3) * 0.12}"
+              />
+            `
+          ).join("")
+      ).join("");
 
       return `
-        <rect
-          x="${building.x}"
-          y="${y}"
-          width="${building.width}"
-          height="${building.height}"
-          fill="#050009"
-          stroke="${theme.colors.muted}"
-          stroke-width="1"
-        />
+        <g>
+          <rect
+            x="${x}"
+            y="${y}"
+            width="${buildingWidth}"
+            height="${buildingHeight}"
+            fill="#0D0618"
+            stroke="${theme.colors.muted}"
+            stroke-width="1"
+          />
+
+          ${windows}
+        </g>
       `;
     })
     .join("");
 }
 
-export function retroCityLights(
+export function retroGrid(
+  width: number,
+  height: number,
   theme: DesignTheme
 ): string {
-  const lights: string[] = [];
+  const horizon = height * 0.72;
 
-  const buildings = [
-    { x: 15, y: 485 },
-    { x: 110, y: 460 },
-    { x: 185, y: 490 },
-    { x: 300, y: 425 },
-    { x: 390, y: 475 },
-    { x: 485, y: 400 },
-    { x: 550, y: 465 },
-    { x: 650, y: 420 },
-    { x: 725, y: 480 },
-    { x: 855, y: 440 },
-    { x: 945, y: 475 },
-    { x: 1060, y: 410 },
-    { x: 1130, y: 455 }
-  ];
+  const horizontalLines = Array.from(
+    { length: 6 },
+    (_, index) => {
+      const y =
+        horizon +
+        Math.pow(index / 5, 1.7) *
+          (height - horizon);
 
-  buildings.forEach(
-    (building, buildingIndex) => {
-      for (let row = 0; row < 4; row++) {
-        lights.push(`
-          <rect
-            x="${building.x}"
-            y="${building.y + row * 12}"
-            width="5"
-            height="4"
-            rx="1"
-            fill="${
-              buildingIndex % 2 === 0
-                ? theme.colors.primary
-                : theme.colors.accent
-            }"
-            opacity="${
-              0.3 + (row % 2) * 0.25
-            }"
-          />
-        `);
-      }
+      return `
+        <line
+          x1="0"
+          y1="${y}"
+          x2="${width}"
+          y2="${y}"
+          stroke="${theme.colors.accent}"
+          stroke-width="1"
+          opacity="${0.10 - index * 0.01}"
+        />
+      `;
     }
-  );
+  ).join("");
 
-  return lights.join("");
+  const verticalLines = Array.from(
+    { length: 13 },
+    (_, index) => {
+      const x =
+        (width / 12) * index;
+
+      return `
+        <line
+          x1="${x}"
+          y1="${horizon}"
+          x2="${width / 2 + (x - width / 2) * 2.5}"
+          y2="${height}"
+          stroke="${theme.colors.primary}"
+          stroke-width="1"
+          opacity="0.08"
+        />
+      `;
+    }
+  ).join("");
+
+  return `
+    <g>
+      ${horizontalLines}
+      ${verticalLines}
+    </g>
+  `;
 }

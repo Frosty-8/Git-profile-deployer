@@ -1,9 +1,6 @@
 import type { Context } from "hono";
 
-import {
-  designRegistry,
-  profileService
-} from "../config/dependencies.js";
+import { renderService } from "../config/dependencies.js";
 
 export async function renderDesign(c: Context) {
   const designId = c.req.param("designId");
@@ -14,7 +11,7 @@ export async function renderDesign(c: Context) {
       {
         error: {
           code: "DESIGN_ID_REQUIRED",
-          message: "Design ID is required"
+          message: "designId path parameter is required"
         }
       },
       400
@@ -33,29 +30,33 @@ export async function renderDesign(c: Context) {
     );
   }
 
-  const design = designRegistry.get(designId);
-
-  if (!design) {
-    return c.json(
-      {
-        error: {
-          code: "DESIGN_NOT_FOUND",
-          message: `Design not found: ${designId}`
-        }
-      },
-      404
+  try {
+    const svg = await renderService.render(
+      designId,
+      username
     );
+
+    return c.body(svg, 200, {
+      "Content-Type": "image/svg+xml; charset=UTF-8",
+      "Cache-Control": "public, max-age=300, s-maxage=300",
+      "X-Content-Type-Options": "nosniff"
+    });
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      error.message.startsWith("Design not found:")
+    ) {
+      return c.json(
+        {
+          error: {
+            code: "DESIGN_NOT_FOUND",
+            message: error.message
+          }
+        },
+        404
+      );
+    }
+
+    throw error;
   }
-
-  const profile = await profileService.getProfile(username);
-
-  const svg = design.render({
-    profile,
-    theme: design.theme
-  });
-
-  return c.body(svg, 200, {
-    "Content-Type": "image/svg+xml; charset=utf-8",
-    "Cache-Control": "public, max-age=300"
-  });
 }

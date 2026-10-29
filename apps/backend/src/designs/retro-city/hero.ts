@@ -1,92 +1,129 @@
 import {
-  avatar,
-  text,
-  line,
-  group
+  circle,
+  group,
+  text
 } from "../../sdk/svg/index.js";
 
 import type { SectionDefinition } from "../../composition/section.js";
 
-export const retroHeroSection:
-  SectionDefinition = {
-    id: "hero",
+export const retroHeroSection: SectionDefinition = {
+  id: "hero",
 
-    render(context) {
-      const {
-        profile,
-        theme
-      } = context;
+  render(context) {
+    const {
+      profile,
+      theme,
+      height
+    } = context;
 
-      return group(
-        [
-          avatar({
-            url: profile.avatarUrl,
-            x: 0,
-            y: 0,
-            size: 110
-          }),
+    const avatarSize = Math.min(
+      130,
+      height - 20
+    );
 
-          text(
-            profile.name ??
-              profile.username,
-            {
-              x: 145,
-              y: 40,
-              fill: theme.colors.foreground,
-              fontSize: 38,
-              fontFamily:
-                theme.typography.heading,
-              fontWeight: 700
-            }
-          ),
+    const centerY = height / 2;
 
-          text(
-            `@${profile.username}`,
-            {
-              x: 145,
-              y: 72,
-              fill: theme.colors.accent,
-              fontSize: 16,
-              fontFamily:
-                theme.typography.mono
-            }
-          ),
+    const particles = Array.from(
+      { length: 12 },
+      (_, index) => {
+        const x = 30 + (index * 73) % 500;
+        const y = 20 + (index * 41) % 110;
 
-          text(
-            profile.bio ??
-              "Developer",
-            {
-              x: 145,
-              y: 105,
-              fill: theme.colors.secondary,
-              fontSize: 16,
-              fontFamily:
-                theme.typography.body
-            }
-          ),
+        return `
+          <circle
+            cx="${x}"
+            cy="${y}"
+            r="${index % 3 === 0 ? 2 : 1}"
+            fill="${index % 2 === 0
+              ? theme.colors.accent
+              : theme.colors.primary}"
+            opacity="0.55"
+          />
+        `;
+      }
+    ).join("");
 
-          line({
-            x1: 145,
-            y1: 120,
-            x2: 700,
-            y2: 120,
-            stroke: theme.colors.primary,
-            strokeWidth: 1,
-            opacity: 0.7
-          }),
+    return `
+      ${particles}
 
-          text(
-            "SYSTEM ONLINE // PROFILE LOADED",
-            {
-              x: 720,
-              y: 40,
-              fill: theme.colors.primary,
-              fontSize: 12,
-              fontFamily:
-                theme.typography.mono
-            }
-          )
-        ].join("")
-      );
-    }
-  };
+      <g>
+        <circle
+          cx="${avatarSize / 2}"
+          cy="${centerY}"
+          r="${avatarSize / 2 + 10}"
+          fill="none"
+          stroke="${theme.colors.primary}"
+          stroke-width="3"
+          opacity="0.8"
+        />
+
+        <circle
+          cx="${avatarSize / 2}"
+          cy="${centerY}"
+          r="${avatarSize / 2 + 17}"
+          fill="none"
+          stroke="${theme.colors.accent}"
+          stroke-width="1"
+          stroke-dasharray="4 8"
+          opacity="0.7"
+        />
+
+        <image
+          href="${profile.avatarUrl}"
+          x="0"
+          y="${centerY - avatarSize / 2}"
+          width="${avatarSize}"
+          height="${avatarSize}"
+          preserveAspectRatio="xMidYMid slice"
+        />
+      </g>
+
+      ${text(
+        "SYSTEM ONLINE",
+        {
+          x: avatarSize + 40,
+          y: centerY - 38,
+          fill: theme.colors.accent,
+          fontSize: 13,
+          fontFamily: theme.typography.mono,
+          fontWeight: 700
+        }
+      )}
+
+      ${text(
+        profile.name ?? profile.username,
+        {
+          x: avatarSize + 40,
+          y: centerY + 5,
+          fill: theme.colors.foreground,
+          fontSize: 38,
+          fontFamily: theme.typography.heading,
+          fontWeight: 800
+        }
+      )}
+
+      ${text(
+        `@${profile.username}`,
+        {
+          x: avatarSize + 42,
+          y: centerY + 32,
+          fill: theme.colors.secondary,
+          fontSize: 16,
+          fontFamily: theme.typography.mono
+        }
+      )}
+
+      ${text(
+        (profile.bio ?? "Building useful things.")
+          .slice(0, 65),
+        {
+          x: avatarSize + 42,
+          y: centerY + 63,
+          fill: theme.colors.foreground,
+          fontSize: 15,
+          fontFamily: theme.typography.body
+        }
+      )}
+    `;
+  }
+};
