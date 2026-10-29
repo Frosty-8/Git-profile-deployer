@@ -1,0 +1,847 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+>
+
+          
+    <defs>
+      <linearGradient id="retroBackground" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#090014"/><stop offset="55%" stop-color="#16002D"/><stop offset="100%" stop-color="#050008"/>
+</linearGradient>
+      <filter id="retroGlow">
+  <feGaussianBlur
+    stdDeviation="6"
+    result="blur"
+  />
+  <feMerge>
+    <feMergeNode in="blur"/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+    </defs>
+  
+    <rect x="0" y="0" width="1200" height="630" fill="url(#retroBackground)"/>
+  
+    
+        <rect
+          x="0"
+          y="465"
+          width="90"
+          height="65"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="90"
+          y="435"
+          width="70"
+          height="95"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="160"
+          y="475"
+          width="120"
+          height="55"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="280"
+          y="405"
+          width="80"
+          height="125"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="360"
+          y="455"
+          width="110"
+          height="75"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="470"
+          y="380"
+          width="65"
+          height="150"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="535"
+          y="445"
+          width="100"
+          height="85"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="635"
+          y="400"
+          width="75"
+          height="130"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="710"
+          y="460"
+          width="130"
+          height="70"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="840"
+          y="420"
+          width="90"
+          height="110"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="930"
+          y="455"
+          width="115"
+          height="75"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="1045"
+          y="390"
+          width="70"
+          height="140"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+        <rect
+          x="1115"
+          y="435"
+          width="85"
+          height="95"
+          fill="#050009"
+          stroke="#4E4668"
+          stroke-width="1"
+        />
+      
+
+    
+          <rect
+            x="15"
+            y="485"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="15"
+            y="497"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="15"
+            y="509"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="15"
+            y="521"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="110"
+            y="460"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="110"
+            y="472"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="110"
+            y="484"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="110"
+            y="496"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="185"
+            y="490"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="185"
+            y="502"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="185"
+            y="514"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="185"
+            y="526"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="300"
+            y="425"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="300"
+            y="437"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="300"
+            y="449"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="300"
+            y="461"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="390"
+            y="475"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="390"
+            y="487"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="390"
+            y="499"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="390"
+            y="511"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="485"
+            y="400"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="485"
+            y="412"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="485"
+            y="424"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="485"
+            y="436"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="550"
+            y="465"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="550"
+            y="477"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="550"
+            y="489"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="550"
+            y="501"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="650"
+            y="420"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="650"
+            y="432"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="650"
+            y="444"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="650"
+            y="456"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="725"
+            y="480"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="725"
+            y="492"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="725"
+            y="504"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="725"
+            y="516"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="855"
+            y="440"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="855"
+            y="452"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="855"
+            y="464"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="855"
+            y="476"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="945"
+            y="475"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="945"
+            y="487"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="945"
+            y="499"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="945"
+            y="511"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="1060"
+            y="410"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="1060"
+            y="422"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="1060"
+            y="434"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="1060"
+            y="446"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#00F5FF"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="1130"
+            y="455"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="1130"
+            y="467"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+          <rect
+            x="1130"
+            y="479"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.3"
+          />
+        
+          <rect
+            x="1130"
+            y="491"
+            width="5"
+            height="4"
+            rx="1"
+            fill="#FF2BD6"
+            opacity="0.55"
+          />
+        
+  
+    <line x1="0" y1="530" x2="1200" y2="530" stroke="#00F5FF" stroke-width="2" opacity="0.8"/>
+  
+    <g filter="url(#retroGlow)">
+      <line x1="0" y1="540" x2="1200" y2="540" stroke="#FF2BD6" stroke-width="1" opacity="0.35"/>
+<line x1="0" y1="548" x2="1200" y2="548" stroke="#FF2BD6" stroke-width="1" opacity="0.32999999999999996"/>
+<line x1="0" y1="556" x2="1200" y2="556" stroke="#FF2BD6" stroke-width="1" opacity="0.31"/>
+<line x1="0" y1="564" x2="1200" y2="564" stroke="#FF2BD6" stroke-width="1" opacity="0.29"/>
+<line x1="0" y1="572" x2="1200" y2="572" stroke="#FF2BD6" stroke-width="1" opacity="0.26999999999999996"/>
+<line x1="0" y1="580" x2="1200" y2="580" stroke="#FF2BD6" stroke-width="1" opacity="0.24999999999999997"/>
+<line x1="0" y1="588" x2="1200" y2="588" stroke="#FF2BD6" stroke-width="1" opacity="0.22999999999999998"/>
+<line x1="0" y1="596" x2="1200" y2="596" stroke="#FF2BD6" stroke-width="1" opacity="0.20999999999999996"/>
+<line x1="0" y1="604" x2="1200" y2="604" stroke="#FF2BD6" stroke-width="1" opacity="0.18999999999999997"/>
+<line x1="0" y1="612" x2="1200" y2="612" stroke="#FF2BD6" stroke-width="1" opacity="0.16999999999999998"/>
+<line x1="0" y1="620" x2="1200" y2="620" stroke="#FF2BD6" stroke-width="1" opacity="0.14999999999999997"/>
+<line x1="0" y1="628" x2="1200" y2="628" stroke="#FF2BD6" stroke-width="1" opacity="0.12999999999999998"/>
+    </g>
+  
+
+          <g transform="translate(70 45)">
+<g >
+<g >
+<circle cx="55" cy="55" r="55" fill="#000"/><image href="https://avatars.githubusercontent.com/u/176569016?v=4" x="0" y="0" width="110" height="110" preserveAspectRatio="xMidYMid slice"/>
+</g><text x="145" y="40" fill="#F8F7FF" font-size="38" font-family="Inter" font-weight="700">
+  Sarthak
+</text><text x="145" y="72" fill="#00F5FF" font-size="16" font-family="JetBrains Mono">
+  @Frosty-8
+</text><text x="145" y="105" fill="#A8A0C8" font-size="16" font-family="Inter">
+  Developer
+</text><line x1="145" y1="120" x2="700" y2="120" stroke="#FF2BD6" stroke-width="1" opacity="0.7"/><text x="720" y="40" fill="#FF2BD6" font-size="12" font-family="JetBrains Mono">
+  SYSTEM ONLINE // PROFILE LOADED
+</text>
+</g>
+</g>
+<g transform="translate(70 190)">
+
+            <rect x="0" y="0" width="344" height="100" fill="#0D0618" stroke="#FF2BD6" stroke-width="1" rx="4"/>
+      
+            <text x="20" y="45" fill="#00F5FF" font-size="30" font-family="JetBrains Mono" font-weight="700">
+  79
+</text>
+      
+            <text x="20" y="75" fill="#A8A0C8" font-size="12" font-family="JetBrains Mono">
+  REPOS
+</text>
+          
+            <rect x="358" y="0" width="344" height="100" fill="#0D0618" stroke="#FF2BD6" stroke-width="1" rx="4"/>
+      
+            <text x="378" y="45" fill="#00F5FF" font-size="30" font-family="JetBrains Mono" font-weight="700">
+  8
+</text>
+      
+            <text x="378" y="75" fill="#A8A0C8" font-size="12" font-family="JetBrains Mono">
+  FOLLOWERS
+</text>
+          
+            <rect x="716" y="0" width="344" height="100" fill="#0D0618" stroke="#FF2BD6" stroke-width="1" rx="4"/>
+      
+            <text x="736" y="45" fill="#00F5FF" font-size="30" font-family="JetBrains Mono" font-weight="700">
+  6
+</text>
+      
+            <text x="736" y="75" fill="#A8A0C8" font-size="12" font-family="JetBrains Mono">
+  FOLLOWING
+</text>
+          
+</g>
+<g transform="translate(70 315)">
+<text x="0" y="22" fill="#00F5FF" font-size="16" font-family="JetBrains Mono" font-weight="700">
+  TECH // STACK
+</text>
+<rect x="0" y="40" width="200" height="26" fill="#0D0618" stroke="#4E4668" stroke-width="1" rx="3"/>
+<text x="10" y="58" fill="#F8F7FF" font-size="12" font-family="JetBrains Mono">
+  Jupyter Notebook
+</text>
+<text x="185" y="58" fill="#FF2BD6" font-size="10" font-family="JetBrains Mono" text-anchor="end">
+  86.2%
+</text>
+<rect x="220" y="40" width="200" height="26" fill="#0D0618" stroke="#4E4668" stroke-width="1" rx="3"/>
+<text x="230" y="58" fill="#F8F7FF" font-size="12" font-family="JetBrains Mono">
+  Python
+</text>
+<text x="405" y="58" fill="#FF2BD6" font-size="10" font-family="JetBrains Mono" text-anchor="end">
+  10.8%
+</text>
+<rect x="0" y="74" width="200" height="26" fill="#0D0618" stroke="#4E4668" stroke-width="1" rx="3"/>
+<text x="10" y="92" fill="#F8F7FF" font-size="12" font-family="JetBrains Mono">
+  JavaScript
+</text>
+<text x="185" y="92" fill="#FF2BD6" font-size="10" font-family="JetBrains Mono" text-anchor="end">
+  1.0%
+</text>
+<rect x="220" y="74" width="200" height="26" fill="#0D0618" stroke="#4E4668" stroke-width="1" rx="3"/>
+<text x="230" y="92" fill="#F8F7FF" font-size="12" font-family="JetBrains Mono">
+  HTML
+</text>
+<text x="405" y="92" fill="#FF2BD6" font-size="10" font-family="JetBrains Mono" text-anchor="end">
+  0.9%
+</text>
+<rect x="0" y="108" width="200" height="26" fill="#0D0618" stroke="#4E4668" stroke-width="1" rx="3"/>
+<text x="10" y="126" fill="#F8F7FF" font-size="12" font-family="JetBrains Mono">
+  TypeScript
+</text>
+<text x="185" y="126" fill="#FF2BD6" font-size="10" font-family="JetBrains Mono" text-anchor="end">
+  0.7%
+</text>
+<rect x="220" y="108" width="200" height="26" fill="#0D0618" stroke="#4E4668" stroke-width="1" rx="3"/>
+<text x="230" y="126" fill="#F8F7FF" font-size="12" font-family="JetBrains Mono">
+  CSS
+</text>
+<text x="405" y="126" fill="#FF2BD6" font-size="10" font-family="JetBrains Mono" text-anchor="end">
+  0.3%
+</text>
+</g>
+<g transform="translate(530 315)">
+
+            <rect x="0" y="0" width="293" height="150" fill="#0D0618" stroke="#FF2BD6" stroke-width="1" rx="4"/>
+
+            <text x="18" y="30" fill="#00F5FF" font-size="16" font-family="JetBrains Mono" font-weight="700">
+  Git-profile-deployer
+</text>
+
+            <text x="18" y="60" fill="#A8A0C8" font-size="12" font-family="Inter">
+  NO DESCRIPTION
+</text>
+
+            <text x="18" y="105" fill="#FF2BD6" font-size="12" font-family="JetBrains Mono">
+  ★ 0
+</text>
+
+            <text x="90" y="105" fill="#FF2BD6" font-size="12" font-family="JetBrains Mono">
+  ⑂ 0
+</text>
+
+            <text x="18" y="130" fill="#4E4668" font-size="11" font-family="JetBrains Mono">
+  TypeScript
+</text>
+          
+            <rect x="307" y="0" width="293" height="150" fill="#0D0618" stroke="#FF2BD6" stroke-width="1" rx="4"/>
+
+            <text x="325" y="30" fill="#00F5FF" font-size="16" font-family="JetBrains Mono" font-weight="700">
+  dashboard-trial
+</text>
+
+            <text x="325" y="60" fill="#A8A0C8" font-size="12" font-family="Inter">
+  NO DESCRIPTION
+</text>
+
+            <text x="325" y="105" fill="#FF2BD6" font-size="12" font-family="JetBrains Mono">
+  ★ 0
+</text>
+
+            <text x="397" y="105" fill="#FF2BD6" font-size="12" font-family="JetBrains Mono">
+  ⑂ 0
+</text>
+
+            <text x="325" y="130" fill="#4E4668" font-size="11" font-family="JetBrains Mono">
+  Python
+</text>
+          
+</g>
+<g transform="translate(70 490)">
+<text x="0" y="18" fill="#4E4668" font-size="10" font-family="JetBrains Mono">
+  FROSTY DESIGN STUDIO // RETRO CITY
+</text>
+</g>
+        
+</svg>

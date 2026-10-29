@@ -5,6 +5,8 @@ import { DesignRegistry } from "../services/design-registry.service.js";
 
 import { minimalEditorialDesign } from "../designs/minimal-editorial/index.js";
 
+import { retroCityDesign } from "../designs/retro-city/index.js";
+
 const githubAdapter = new GitHubAdapter();
 
 const cacheService = new CacheService();
@@ -18,4 +20,8 @@ export const designRegistry = new DesignRegistry();
 
 designRegistry.register(
   minimalEditorialDesign
+);
+
+designRegistry.register(
+  retroCityDesign
 );

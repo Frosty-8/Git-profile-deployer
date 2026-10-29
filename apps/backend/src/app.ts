@@ -8,6 +8,7 @@ import { loggerMiddleware } from "./middleware/logger.js";
 import designRoute from "./routes/design.js";
 import profile from "./routes/profile.js";
 import health from "./routes/health.js";
+import renderRoute from "./routes/render.js";
 
 const app = new Hono();
 
@@ -22,6 +23,8 @@ app.route(`${API_PREFIX}/health`, health);
 app.route(`${API_PREFIX}/profile`, profile);
 
 app.route(`${API_PREFIX}/designs`, designRoute);
+
+app.route(`${API_PREFIX}/render`,renderRoute);
 
 app.notFound((c) => {
   return c.json(
