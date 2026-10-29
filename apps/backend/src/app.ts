@@ -5,6 +5,7 @@ import { corsMiddleware } from "./middleware/cors.js";
 import { errorHandler } from "./middleware/error-handler.js";
 import { loggerMiddleware } from "./middleware/logger.js";
 
+import designRoute from "./routes/design.js";
 import profile from "./routes/profile.js";
 import health from "./routes/health.js";
 
@@ -19,6 +20,8 @@ app.onError(errorHandler);
 app.route(`${API_PREFIX}/health`, health);
 
 app.route(`${API_PREFIX}/profile`, profile);
+
+app.route(`${API_PREFIX}/designs`, designRoute);
 
 app.notFound((c) => {
   return c.json(
